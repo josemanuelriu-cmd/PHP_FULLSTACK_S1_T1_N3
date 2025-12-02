@@ -6,20 +6,16 @@ body{
     padding: 0px;
     margin: 0px;
     background-color: white;
-    display: flex;
-    flex-direction: column;
-}
-title{
-    animation: RotarLogo 4s ease-in;
+    display: grid;
+    
 }
 header{
     background-color: white;    
     max-width: 1200px;
     width: 100%;
     padding: 20px;    
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-rows: 100px 200px;
     gap:116px;
     margin-bottom: 5px;
     background-image: url('../Images/header.jpg');
@@ -29,57 +25,55 @@ header{
 }
 .sup{
     padding: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap:20px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
     max-width:1200px;
 }
 .logo,
 .social,
-.nav{
+.subnav{
     padding: 10px 0px 10px 10px;  
-    display: flex;
-    flex-grow:1;
+    display: grid;
     gap:5px;
 }
 .logo img{
     width: 50px;
     height: 50px;
-    animation: RotarLogo 4s ease-in;
+    animation: Rotate 4s ease-in;
 }
-.nav img:hover{
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    align-items: center;
+}
+.subnav{
+    grid-template-columns: 1fr 4fr;
+}
+.subnav img:hover{
     width: 20px;
     height: 20px; 
 }
-.nav a:hover{
-    font-size: 22px;
-    color: darkgray;
-}
-.nav{
-    flex-grow:3;
-}
-.nav img{
+.subnav img{
     margin-right: 5px;
     width: 15px;
     height: 15px;
 }
-.nav a{
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
+.subnav a:hover{
+    font-size: 22px;
+    color: darkgray;
+}
+.subnav a{
     text-decoration: none;
     color: grey;
     margin-right: 10px;
 }
 .social{
-    justify-content: flex-end;
+    justify-items: end;
+    align-items: center;
+    grid-template-columns: 4fr 1fr;
 }
 .social img{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
     width: 20px;
     height: 20px;
     margin-right: 20px;
@@ -93,23 +87,20 @@ header{
     background-color: lightgray;
     opacity: 80%;
     padding: 20px;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    justify-self: center;
     width: 90%;
-    height: 125px;
-    align-self: center;
+    height: 125px;    
     max-width: 1000px;
 }
 .banner{
     color: #F59C7B;
-    display: flex;
-    flex-grow:1;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
+    display: grid;
     justify-content: center;
     font-size: 28px;
     opacity: 0.8;
+    align-self: center;
+    animation: Rotate 4s ease-in;
 }
 .banner img{
     width: 100%;
@@ -118,38 +109,30 @@ header{
 }
 .central_body{
     padding: 10px 0px;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    align-self: center;
     gap: 10px;
     max-width: 1200px;
-     align-self: center;
 }
 .left{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-grow:3;       
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     background-color: #D8D7D7;
-    padding-top: 10px;
+    padding: 10px 10px;
+    gap: 10px;
 }
 .article{
     background-color: #F5F1F1;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
     padding: 10px;
-    width: 50%;
-    max-width: 48%;
-    margin-bottom: 15px;   
+    margin-bottom: 5px;   
     gap: 5px;
 }
 .image{
     position: relative;
-    display: flex;
-    /*background-image: url('../Images/sakura.jpg');
-    background-position: center;*/
+    display: grid;
 }
 .image img{
     width: 100%;    
@@ -165,7 +148,6 @@ header{
     color: white;
     padding-left: 5px;
     padding-top: 10px;
-    width: 100%;
     font-weight: bold;
 }
 .art_text{
@@ -178,43 +160,35 @@ header{
     color: #9F9E9E;
     text-decoration: none;
 }
-.art_right{
-    margin-right: 0px;
-}
 .navigation{
-    width: 100%;
     padding: 5px 5px;
     padding-left: 10px;
-    text-align: center;
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 2;
 }
 .right{
     background-color:#D8D7D7;
     padding: 5px 0px;
-    display: flex;
-    flex-direction: column;
-    flex-grow:1;     
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto;
     min-width: 250px;   
 }
 .publicidad1{
-    padding: 5px 5px;
     padding: 15px;
     padding-left: 10px;
-    justify-content: center;
     font-weight: bold;
     text-align: center;
 }
 .publicidad2{
-    padding: 5px 5px;
     margin-bottom: 15px;
     text-align: center;
 }
 footer{
     background-color: #D8D7D7;
     max-width: 1200px;
-    width: 100%;
     margin-top: 15px;
     margin-bottom: 20px;
-    align-self: center;
 }
 .footer{
     background-color: #F5F1F1;    
@@ -222,60 +196,82 @@ footer{
     margin: 0px 10px;
     text-align: center;
     padding: 10px 0px;
-    
 }
 
 @media only screen and (max-width: 768px) {
 
     body{
         max-width:768px;   
-        /*height: 470px;
-        gap: 80px;*/      
+        gap: 5px;
     }
     header{
         max-width:768px;   
         height: 470px;
-        gap: 20px;
+        gap: 130px;
+        grid-template-rows: 150px 350px;
     }
     .sup{
-        flex-direction: column;     
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 40px 40px;
+        justify-items: center;
         gap:5px;   
-    }    
-    .inf .banner{
+    }
+    .logo{
+        padding: 0;
+    }
+    .social{
+        grid-template-columns: 1fr 1fr;
+    }
+    .social img{
+        margin-right: 10px;
+    }
+    .banner{
         font-size: 24px;
     }
     .central_body{
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        display: grid;
         gap:20px;
+        max-width: 768px;
     }
     .right{
-        flex-direction: column; 
+        display: grid;
+        min-width: 200px;
     }
     .publicidad:last-child{
         margin-bottom: 0px;
+    }
+    footer{
+        max-width: 768px;
     }
 }
 
 @media only screen and (max-width: 600px) {
 
-    body,
+    body{
+        max-width: 600px;
+    }
     header{
         max-width: 600px;
-        min-width: 550px;    
     }
-    .inf .banner{
+    .banner{
         font-size: 20px;
     }
    .left{   
-        flex-direction: column;     
+        display: block;
     }
     .article{
         width: 100%;
         max-width: 100%;
     }
+    .image .date{
+        top: 88%;
+        left: 2%;
+    }
 }
 
-@keyframes RotarLogo{
+@keyframes Rotate{
     0%{
         transform: rotate(0deg);
     }
